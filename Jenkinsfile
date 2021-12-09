@@ -4,10 +4,11 @@ pipeline {
     stages {
         stage('Read File') {
             steps {
-             script {
+             /*script {
               def fileContent = readFile 'README.md'
               echo(fileContent)
-              }
+              }*/
+              cat README.md
             }
         }
     }
