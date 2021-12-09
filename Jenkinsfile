@@ -11,9 +11,9 @@ pipeline {
               sh "printenv"
                 echo "${GIT_URL}"
                 echo GIT_URL.substring(GIT_URL.lastIndexOf('/')+1, GIT_URL.lastIndexOf('.'))
-             // dir("${GIT_URL}".substring("${GIT_URL}".lastIndexOf("/")+1, "${GIT_URL}".lastIndexOf("."))){
-                dir('Test') {
+              dir("${GIT_URL}".substring("${GIT_URL}".lastIndexOf("/")+1, "${GIT_URL}".lastIndexOf("."))){                
                 }
+               sh ls -ltr
               sh "cat README.md"
             }
         }
