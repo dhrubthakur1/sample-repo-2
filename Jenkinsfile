@@ -8,7 +8,7 @@ pipeline {
               def fileContent = readFile 'README.md'
               echo(fileContent)
               }*/
-              print env
+              sh "print env"
               sh "cat README.md"
             }
         }
