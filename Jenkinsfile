@@ -4,10 +4,17 @@ pipeline {
     stages {
         stage('Read File') {
             steps {
-             /*script {
+             script {
               def fileContent = readFile 'README.md'
               echo(fileContent)
-              }*/
+              def rootDir = pwd()
+                println("Current Directory: " + rootDir)
+
+                // point to exact source file
+              def example = load "${rootDir}/Example.Groovy"
+                example.exampleMethod()
+                example.otherExampleMethod()
+              }
               sh "printenv"
                 echo "${GIT_URL}"
                 echo GIT_URL.substring(GIT_URL.lastIndexOf('/')+1, GIT_URL.lastIndexOf('.'))
