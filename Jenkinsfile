@@ -11,7 +11,7 @@ pipeline {
                 println("Current Directory: " + rootDir)
 
                 // point to exact source file
-              def example = load "${rootDir}/Example.Groovy"
+              def example = load "${rootDir}/example.groovy"
                 example.exampleMethod()
                 example.otherExampleMethod()
               }
